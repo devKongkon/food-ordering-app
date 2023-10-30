@@ -52,7 +52,7 @@ function Carts() {
                         <div>
                             <Link
                                 to='/checkout'>
-                                <button className='bg-cyan-800 text-white px-3 py-1 rounded-full text-base font-semibold'>Checkout🤩</button>
+                                <button className='bg-cyan-800 text-white px-3 py-1 rounded-full text-base font-semibold'>Checkout</button>
                             </Link>
                         </div>
                     </div>

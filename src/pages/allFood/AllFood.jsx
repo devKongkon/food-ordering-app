@@ -2,11 +2,17 @@ import { BsSearch } from "react-icons/bs";
 import { Container, products } from '../../index'
 import ProductCard from "../../components/productCard/ProductCard";
 import { useState } from "react";
+import ReactPaginate from "react-paginate";
 function AllFood() {
     const [searchMethod, setSearchMethod] = useState('');
     // console.log(searchTerm)
     const [productData, setProductData] = useState(products);
     const [sortingMethod, setSortingMethod] = useState('default')
+    /* Pagination method integration */
+    const [currentPage, setCurrentPage] = useState(0);
+    const itemsPerPage = 8; //Number of items per page
+    const indexOfLastItem = (currentPage + 1) * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
 
     // Sorting function
     const sortProducts = (products, method) => {
@@ -64,13 +70,29 @@ function AllFood() {
                             if (item.title.toLocaleLowerCase().includes(searchMethod.toLocaleLowerCase())
                             )
                                 return item;
-                        }).map((item) => (
-                            <ProductCard
-                                key={item.id}
-                                item={item}
-                            />
-                        ))
+                        })
+                            .slice(indexOfFirstItem, indexOfLastItem)
+                            .map((item) => (
+                                <ProductCard
+                                    key={item.id}
+                                    item={item}
+                                />
+                            ))
                     };
+                </div>
+                {/* Pagination component */}
+                <div>
+                    <ReactPaginate
+                        pageCount={Math.ceil(sortedProducts.length / itemsPerPage)}
+                        pageRangeDisplayed={2}
+                        marginPagesDisplayed={1}
+                        onPageChange={({ selected }) => setCurrentPage(selected)}
+                        containerClassName={'pagination'}
+                        activeClassName={'active'}
+                        nextClassName="next"
+                        previousLabel="< previous"
+                        nextLabel = "next >"
+                    />
                 </div>
             </Container>
         </section>
