@@ -12,7 +12,7 @@ import Checkout from "./pages/checkout/Checkout";
 import Contact from "./pages/contact/Contact";
 import Error from "./pages/error/Error";
 import Home from "./pages/home/Home";
-import PizzaDetails from "./pages/pizzaDetails/PizzaDetails";
+import PizzaDetails from "./pages/foodDetails/FoodDetails";
 import Pizzas from "./pages/pizzas/Pizzas";
 import store from "./store/store";
 import styles from "./style";

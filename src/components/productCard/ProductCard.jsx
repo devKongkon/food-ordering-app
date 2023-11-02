@@ -21,13 +21,13 @@ function ProductCard(props) {
                 <Link to={`/pizzas/${id}`}>
                     <img
                         src={image01}
-                        className='w-32 mx-auto  mask mask-composite'
+                        className='w-32 mx-auto hover:scale-110 duration-500'
                     />
                 </Link>
                 <Link to={`/pizzas/${id}`}>
-                    <span className='block py-2'>{title}</span>
+                    <span className='block py-2 md:text-xl'>{title}</span>
                 </Link>
-                <span className=''>${price}</span>
+                <span className='font-semibold'>${price}</span>
                 <button
                     onClick={addToCart}
                     className='mx-auto text-white text-center block bg-cyan-900 px-4 py-2 mt-1 cursor-pointer rounded-full duration-500 transition transform hover:translate-y-1 '

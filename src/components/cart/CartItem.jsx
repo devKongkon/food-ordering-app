@@ -12,7 +12,7 @@ function CartItem({ item }) {
             id,
             title,
             price,
-            image01
+            image01,
         }))
     }
 

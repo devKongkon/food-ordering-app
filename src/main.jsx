@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import {
   AllFood,
-  Cart, Checkout, Contact, Error, Home, Layout, PizzaDetails, Pizzas, store
+  Cart, Checkout, Contact, Error, Home, Layout, PizzaDetails, store
 } from './index'
 import { RouterProvider } from 'react-router-dom'
 import {

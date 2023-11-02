@@ -5,9 +5,6 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../../components/styles/swiper.css'
-
-
-
 import {
   Container,
   ProductCart,
@@ -103,8 +100,11 @@ function Home() {
           </div>
           {/*Hot pizzas section */}
           <div className='mt-20'>
-            <h1 className='text-center text-3xl font-bold uppercase mb-3  p-2'><span className='border-l-2 p-2 before:hover:'>Hot pizzas</span></h1>
-            <div className='grid grid-cols-2 md:grid-cols-4 sm:grid-cols-3 justify-center items-center '>
+            <div className="relative ">
+              <span className="block  h-px bg-gray-300"></span>
+              <p className="inline-block w-fit  font-semibold bg-white px-2 absolute -top-4 inset-x-0 mx-auto text-2xl">Hot Pizzas</p>
+            </div>
+            <div className='grid grid-cols-2 md:grid-cols-4 sm:grid-cols-3 justify-center items-center mt-14'>
               {hotPizza.map((item) => (
                 <ProductCart
                   item={item}
