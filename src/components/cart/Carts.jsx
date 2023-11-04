@@ -34,20 +34,20 @@ function Carts() {
                         cartProducts.length === 0 ?
                             <h1 className='text-center text-base font-bold text-red-700 pl-4'>No item added to the cart</h1>
                             :
-                            cartProducts?.map((item, id) => (
+                            cartProducts?.map((item) => (
                                 <CartItem
                                     item={item}
-                                    key={id}
+                                    key={item.id}
                                 />
                             ))
                     }
 
                     <div
-                        className='bg-gray-200 w-full flex items-center py-6  px-2 gap-x-6 pl-4 mt-10 fixed bottom-0 '
+                        className='bg-gray-200 w-full flex items-center py-4  px-2 gap-x-6 pl-4 mt-10 fixed bottom-0 '
                     >
                         <div>
-                            <span className=' text-xl text-cyan-950 font-bold'>Subtotal</span>
-                            <span className=' block text-xl font-bold'>${totalAmount}</span>
+                            <span className=' text-base text-cyan-950 font-semibold'>Subtotal</span>
+                            <span className=' block text-base font-semibold'>${totalAmount}</span>
                         </div>
                         <div>
                             <Link

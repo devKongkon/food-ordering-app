@@ -3,7 +3,16 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import {
   AllFood,
-  Cart, Checkout, Contact, Error, Home, Layout, PizzaDetails, store
+  Cart,
+  Checkout,
+  Contact,
+  Error,
+  Home,
+  Layout,
+  Login,
+  PizzaDetails,
+  Signup,
+  store
 } from './index'
 import { RouterProvider } from 'react-router-dom'
 import {
@@ -20,6 +29,8 @@ const router = createBrowserRouter(
       <Route path='checkout' element={<Checkout />} />
       <Route path='pizzas/:id' element={<PizzaDetails />} />
       <Route path='contact' element={<Contact />} />
+      <Route path='login' element={<Login />} />
+      <Route path='signup' element={<Signup />} />
     </Route>
   )
 );

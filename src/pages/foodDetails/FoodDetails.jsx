@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { Container, ProductCart, products } from '../../index'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../store/shoppingCart/cartSlice';
 
@@ -12,6 +12,10 @@ function FoodDetails() {
   const { id } = useParams();
   const dispatch = useDispatch();
   const product = products.find((product) => product.id === id)
+  const [reviewMsg, setReviewMsg] = useState('');
+  const [reviewMail, setReviewMail] = useState('');
+  const [reviewName, setReviewName] = useState('')
+  const [submittedReviews, setSubmittedReviews] = useState([]);
   const { title, price, category, desc, image01 } = product;
   const [previewImage, setPreviewImage] = useState(product.image02);
   const relatedProducts = products.filter((item) => category === item.category)
@@ -24,6 +28,25 @@ function FoodDetails() {
       image01,
     }))
   }
+
+  const reviewHandleSubmit = (e) => {
+    e.preventDefault();
+
+    const newReview = {
+      name: reviewName,
+      email: reviewMail,
+      message: reviewMsg,
+    }
+    setSubmittedReviews([...submittedReviews, newReview])
+
+    setReviewName("");
+    setReviewMail("");
+    setReviewMsg("")
+  }
+
+  useEffect(() => {
+    setPreviewImage(product.image01)
+  }, [product])
 
   return (
     <section>
@@ -83,7 +106,7 @@ function FoodDetails() {
               Add to cart
             </button>
           </div>
-          {/* Tab section */}
+          {/* Tab section with review */}
           <div>
             <Tabs className=''>
               <TabList>
@@ -99,12 +122,21 @@ function FoodDetails() {
                   <div className="flex-1 flex items-center justify-center ">
                     <div className="w-full max-w-md space-y-8 px-4 bg-white text-gray-600 sm:px-0">
                       <div
-                        className="grid grid-cols-3 gap-x-3"
+                        className=" "
                       >
-                          <h1>name</h1>
+                        <h1 className=' text-cyan-800 font-semibold text-xl'>This product is very nice!!</h1>
+                        <p className='mb-4 font-medium'>Robert Bruce</p>
+                        {
+                          submittedReviews.map((review, index) => (
+                            <section key={index}>
+                              <h1 className=' text-cyan-800 font-semibold text-xl'>{review.message}</h1>
+                              <p className='font-medium'>{review.name}</p>
+                            </section>
+                          ))
+                        }
                       </div>
                       <form
-                        onSubmit={(e) => e.preventDefault()}
+                        onSubmit={reviewHandleSubmit}
                         className="space-y-5 "
                       >
                         <div>
@@ -112,23 +144,28 @@ function FoodDetails() {
                             Name
                           </label>
                           <input
+                            onChange={(e) => setReviewName(e.target.value)}
+                            value={reviewName}
                             type="text"
                             required
                             className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                           />
                         </div>
-                        <div>
+                        {/* <div>
                           <label className="font-medium">
                             Email
                           </label>
                           <input
+                            onChange={(e) => setReviewMail(e.target.value)}
                             type="email"
                             required
                             className="w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg"
                           />
-                        </div>
+                        </div> */}
                         <div>
                           <textarea
+                            value={reviewMsg}
+                            onChange={(e) => setReviewMsg(e.target.value)}
                             className='text-black  w-full bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg p-4'
                             placeholder='Write your review'
                             cols="20"

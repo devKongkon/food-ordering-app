@@ -16,12 +16,17 @@ import PizzaDetails from "./pages/foodDetails/FoodDetails";
 import Pizzas from "./pages/pizzas/Pizzas";
 import store from "./store/store";
 import styles from "./style";
+import Login from "./pages/login/Login";
+import Signup from "./pages/signup/Signup";
+
 
 
 
 
 
 export {
+    Login, 
+    Signup,
     AllFood,
     CartItem,
     Contact,

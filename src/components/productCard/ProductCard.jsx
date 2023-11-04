@@ -14,7 +14,7 @@ function ProductCard(props) {
             price
         }))
     }
-
+    
     return (
         <section >
             <div className='text-center py-6 duration-300'>

@@ -26,12 +26,13 @@ function Header() {
 
   return (
 
-    <header className="shadow sticky py-4 px-4 top-0 z-50 bg-slate-50 text-black mx-auto">
+    <header className="shadow sticky py-4  top-0 z-50 bg-slate-50 text-black mx-auto">
       <Container>
         <nav className="flex justify-between py-4 items-center">
           <div>
             <NavLink className={`font-bold`}>
-              Logo
+              <span className="text-3xl text-cyan-900">Slice</span>
+              <span className="text-xl">&Bite</span>
             </NavLink>
           </div>
 
@@ -54,9 +55,13 @@ function Header() {
           </div>
 
           <div className="flex space-x-6  relative items-center">
-            <span className="text-2xl">
+            <NavLink
+              to='/login'
+              className="text-2xl cursor-pointer"
+            >
               <FiUser />
-            </span>
+            </NavLink>
+
             <div className="cursor-pointer relative">
               <BsCart2
                 className="font-bold text-2xl"

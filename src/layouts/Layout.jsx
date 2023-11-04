@@ -12,7 +12,7 @@ function Layout() {
                 showCart && <Carts />
             }
             <Outlet />
-            {/* <Footer /> */}
+            <Footer />
         </>
     )
 }
