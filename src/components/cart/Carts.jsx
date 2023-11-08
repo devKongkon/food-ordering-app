@@ -3,14 +3,17 @@ import { CartItem, Container } from '../../index'
 import { RiCloseLine } from "react-icons/ri";
 import { useDispatch, useSelector } from 'react-redux';
 import { toggle } from '../../store/shoppingCart/cartUiSlice';
+import { useRef } from 'react';
 
 
 
 function Carts() {
     const dispatch = useDispatch();
+    const cartComponentRef = useRef();
     const cartProducts = useSelector(state => state.cart.cartItems)
     // console.log(cartProducts)
     const totalAmount = useSelector(state => state.cart.totalAmount)
+
 
     const toggleCart = () => {
         dispatch(toggle())
@@ -52,7 +55,9 @@ function Carts() {
                         <div>
                             <Link
                                 to='/checkout'>
-                                <button className='bg-cyan-800 text-white px-3 py-1 rounded-full text-base font-semibold'>Checkout</button>
+                                <button
+                                    onClick={() =>toggleCart()}
+                                    className='bg-cyan-800 text-white px-3 py-1 rounded-full text-base font-semibold'>Checkout</button>
                             </Link>
                         </div>
                     </div>

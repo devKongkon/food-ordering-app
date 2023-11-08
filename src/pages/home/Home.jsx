@@ -10,6 +10,7 @@ import {
   ProductCart,
   products,
 } from '../../index'
+import { motion } from 'framer-motion';
 
 function Home() {
   const [category, setCategory] = useState("ALL")
@@ -17,6 +18,7 @@ function Home() {
   const [hotPizza, setHotPizza] = useState([]);
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
+  const colors = ['rgb(22 78 99)', 'rgb(22, 54, 99)', 'rgb(62, 22, 99)'];
 
   const onAutoplayTimeLeft = (s, time, progress) => {
     progressCircle.current.style.setProperty('--progress', 1 - progress);
@@ -85,26 +87,31 @@ function Home() {
                   </svg>
                 </div>
                 <div className="text-center">
-                  <h1 className="text-4xl font-bold text-gray-900 sm:text-6xl">
-                    Craving Satisfaction? Just Wait.
-                    Delicious Pizzas & Burgers, Right at Your Doorstep!
-                  </h1>
-                  <p className="mt-6 text-lg leading-8 text-gray-600">
-                    Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat
-                    commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.
+                  <motion.div
+                    animate={{
+                      color: colors,
+                      transition: { duration: 10, repeat: Infinity, repeatType: 'reverse' }
+                    }}
+                  >
+                    <h1 className="text-xl font-bold sm:text-6xl">
+                      Delicious Pizzas & Burgers, Right at Your Doorstep!
+                    </h1>
+                  </motion.div>
+                  <p className="mt-6 text-lg leading-8 text-gray-900">
+                    Savor the extraordinary taste of our handcrafted pizzas and gourmet burgers, freshly prepared and delivered straight to your door. Experience culinary delight in every bite, made with the finest ingredients and served with a side of convenience. Your perfect mealtime solution awaits <span className='font-semibold'>– Order now and treat your taste buds to an unforgettable feast!</span>
                   </p>
                   <div className="mt-10 flex items-center justify-center gap-x-2">
                     <button
                       type="button"
                       className="rounded-md bg-black px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-black/80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                     >
-                      View Docs
+                      Order now
                     </button>
                     <button
                       type="button"
                       className="rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
                     >
-                      Get Started
+                      Enjoy the Food
                     </button>
                   </div>
                 </div>

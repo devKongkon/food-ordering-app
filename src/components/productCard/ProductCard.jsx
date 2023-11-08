@@ -16,7 +16,7 @@ function ProductCard(props) {
     }
     
     return (
-        <section >
+        <section>
             <div className='text-center py-6 duration-300'>
                 <Link to={`/pizzas/${id}`}>
                     <img
@@ -30,7 +30,7 @@ function ProductCard(props) {
                 <span className='font-semibold'>${price}</span>
                 <button
                     onClick={addToCart}
-                    className='mx-auto text-white text-center block bg-cyan-900 px-4 py-2 mt-1 cursor-pointer rounded-full duration-500 transition transform hover:translate-y-1 '
+                    className='mx-auto text-white text-center block bg-cyan-900 px-4 py-2 mt-1 cursor-pointer rounded-full duration-500 transition transform hover:translate-y-1'
                 >
                     Add to cart
                 </button>
