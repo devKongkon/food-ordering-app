@@ -3,25 +3,24 @@
 function Contact() {
   const locations = [
     {
-      title: 'Bengaluru office',
+      title: 'Khulna office',
       timings: 'Mon-Sat 9am to 5pm.',
-      address: '100, Electronic City Phase-1, Bengaluru, Karnataka 560100 IN',
+      address: '100, Khulna, Satrasta Mor',
     },
     {
       title: 'Head office',
       timings: 'Mon-Sat 9am to 5pm.',
-      address: '12th Main Rd, Indiranagar, Bengaluru, Karnataka 560008 IN',
+      address: '12th Main Rd, Narail',
     },
     {
-      title: 'Karnataka office',
+      title: 'Jessore',
       timings: 'Mon-Sat 9am to 5pm.',
-      address: '42, Residency Rd, Shanthala Nagar, Ashok Nagar, Bengaluru, Karnataka 560025 IN',
+      address: '42, Residency Rd, Jessore Sadar',
     },
   ]
 
   return (
     <div>
-
       <div className="mx-auto max-w-7xl px-4">
         <div className="mx-auto max-w-7xl py-12 md:py-24">
           <div className="grid items-center justify-items-center gap-x-4 gap-y-10 lg:grid-cols-2">
@@ -122,7 +121,7 @@ function Contact() {
           </div>
         </div>
       </div>
-      {/* Address */}
+      {/*----Address----*/}
       <div className="rounded-lg bg-gray-100">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="py-20">
@@ -149,7 +148,6 @@ function Contact() {
       </div>
     </div>
   )
-
 }
 
 export default Contact;

@@ -31,8 +31,7 @@ function Header() {
         <nav className="flex justify-between py-4 items-center">
           <div>
             <NavLink className={`font-bold`}>
-              <span className="text-3xl text-cyan-900">Slice</span>
-              <span className="text-xl">&Bite</span>
+              <span className="text-3xl text-cyan-900">SliceBite</span>
             </NavLink>
           </div>
 
