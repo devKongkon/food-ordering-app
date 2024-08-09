@@ -16,7 +16,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deploy on Netlify
 
-# React + Redux toolkit
+# React + Redux toolkit + Tailwind CSS
 This is a food ordering Ecommerce website. I have implemented searching, sorting, pagination,  related product section, single product page, cart page design, add to cart feature and many more.
 
 - [website link](https://pizza-burger-shop.netlify.app/) 
